@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>联系如晶</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/phone.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+</head>
+<body  style="background:#050504">
+<script>
+    $("document").ready(function(){
+        var w= $(window).width();
+        if(w<=414){
+            $(".header").addClass("noanim")
+        }
+        $("html,body").css("font-size",w/6.4+"px" );
+    });
+    $(window).resize(function(){
+        var w= $(window).width();
+        if(w<=414){
+            $(".header").addClass("noanim")
+        }
+        $("html,body").css("font-size",w/6.4+"px" );
+    });
+    document.body.addEventListener('touchstart', function () { });
+</script>
+
+<!--头部-->
+<header class="header">
+    <div class="header_t">
+        <div class="c">
+            <a href="index.html" class="logo"></a>
+            <span class="header_t_text">—  —高端定制家居一站式服务商</span>
+            <div class="header_menu iconfont icon-menu" id="menu"></div>
+        </div>
+    </div>
+    <div class="header_b flex flex_jcontent">
+        <a href="index.html" class="navLogo"></a>
+        <div class="nav">
+            <ul class="nav_ul">
+                <li class="nav_item">
+                    <div class="nav_name">
+                        <a href="index.html"><span class="iconfont icon-xla"></span>网站首页</a>
+                    </div>
+                </li>
+                <li class="nav_item">
+                    <div class="nav_name">
+                        <a href="about.html"><span class="iconfont icon-xla"></span>关于如晶</a>
+                        <div class="nav_cover"></div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="about.html#a">品牌简介</a>
+                        <a href="about.html#b">设计师团队</a>
+                        <a href="about.html#c">工厂实力</a>
+                        <a href="about.html#d">荣誉资质</a>
+                    </div>
+                </li>
+                <li class="nav_item">
+                    <div class="nav_name">
+                        <a href="product.html"><span class="iconfont icon-xla"></span>产品介绍</a>
+                        <div class="nav_cover"></div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="product.html">木作墙饰</a>
+                        <a href="product.html">衣帽间</a>
+                        <a href="product.html">背景墙</a>
+                        <a href="product.html">时尚家具</a>
+                        <a href="product.html">软装配饰</a>
+                    </div>
+                </li>
+                <li class="nav_item">
+                    <div class="nav_name">
+                        <a href="case.html"><span class="iconfont icon-xla"></span>服务案例</a>
+                        <div class="nav_cover"></div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="case.html">现代时尚</a>
+                        <a href="case.html">低调奢华</a>
+                        <a href="case.html">华丽古典</a>
+                    </div>
+                </li>
+                <li class="nav_item">
+                    <div class="nav_name">
+                        <a href="join.html"><span class="iconfont icon-xla"></span>招商加盟</a>
+                        <div class="nav_cover"></div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="join.html#a">加盟条件</a>
+                        <a href="join.html#b">加盟支持</a>
+                        <a href="join.html#c">加盟优势</a>
+                        <a href="join.html#d">加盟流程</a>
+                        <a href="join.html#e">终端形象展示</a>
+                    </div>
+                </li>
+                <li class="nav_item">
+                    <div class="nav_name">
+                        <a href="new.html"><span class="iconfont icon-xla"></span>新闻动态</a>
+                        <div class="nav_cover"></div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="new.html">公司动态</a>
+                        <a href="new.html">行业资讯</a>
+                        <a href="new.html">市场活动</a>
+                    </div>
+                </li>
+                <li class="nav_item">
+                    <div class="nav_name">
+                        <a href="contact.html"><span class="iconfont icon-xla"></span>联系如晶</a>
+                        <div class="nav_cover"></div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="contact.html#a">联系我们</a>
+                        <a href="contact.html#b">加入我们</a>
+                        <a href="contact.html#c">专卖店展示</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+</header>
+<script>
+    //pc导航动画
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            var top=$(document).scrollTop();
+            var h=.57*($(window).width()/6.4)/.44;
+            if(top>h){
+                $(".header").addClass("active")
+            }else{
+                if($(".header").hasClass("active")){
+                    $(".header").removeClass("active")
+                }
+            }
+        })
+    })
+    //手机弹出菜单
+    $("#menu").click(function(){
+        if($(this).hasClass("icon-chacha")){
+            $(this).removeClass("icon-chacha").addClass("icon-menu");
+            $(".header_b").removeClass("active")
+        }else{
+            $(this).addClass("icon-chacha").removeClass("icon-menu");
+            $(".header_b").addClass("active")
+        }
+    })
+    $(".dropdown a").click(function(){
+        $("#menu").removeClass("icon-chacha").addClass("icon-menu");
+        $(".header_b").removeClass("active")
+    })
+</script>
+<!--banner-->
+<div class="ibanner">
+    <img src="images/ib6.jpg" alt=""/>
+    <div class="btil">
+        <h3 class="btil_text">联系如晶</h3>
+        <p class="btil_text">contact us</p>
+    </div>
+</div>
+
+<!--联系我们-->
+<script src="js/map.js"></script>
+<section class="section">
+    <div class="section_link" id="a"></div>
+    <div class="sectionTil sm_mar">
+        <h3>联系我们</h3>
+        <div class="line"></div>
+    </div>
+    <div class="mapList">
+        <div class="map_item flex">
+            <div class="map_info">
+                <div class="map_name flex flex_jcontent flex_dir_clo">
+                    <p>招商营销中心</p>
+                </div>
+                <div class="map_cnt cnt flex flex_jcontent flex_dir_clo">
+                    <p>
+                        雅布家具（上海）有限公司<br/>
+                        上海市浦东新区南汇工业区<br/>
+                        汇城路1518号1号楼302室<br/>
+                        Tel/.. (86) 21 5808 0666<br/>
+                        加盟专线/..(86) 138 1687 6788
+                    </p>
+                </div>
+            </div>
+            <div class="map_map">
+                <div id="allmap"></div>
+            </div>
+        </div>
+        <div class="map_item flex">
+            <div class="map_info">
+                <div class="map_name flex flex_jcontent flex_dir_clo">
+                    <p>自营旗舰店</p>
+                </div>
+                <div class="map_cnt cnt flex flex_jcontent flex_dir_clo">
+                    <p>
+                        雅布家具（上海）有限公司<br/>
+                        上海市浦东新区南汇工业区<br/>
+                        汇城路1518号1号楼302室<br/>
+                        Tel/.. (86) 21 5808 0666<br/>
+                        加盟专线/..(86) 138 1687 6788
+                    </p>
+                </div>
+            </div>
+            <div class="map_map">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="js/slide2.js"></script>
+<section class="section jus">
+    <div class="section_link" id="b"></div>
+    <div class="sectionTil sm_mar">
+        <h3>加入我们</h3>
+        <div class="line"></div>
+    </div>
+    <div class="advtWrap">
+        <div class="advtList flex" id="navTwo">
+            <div class="advt_item active nt">资深平面设计师</div>
+            <div class="advt_item nt">文案策划 </div>
+            <div class="advt_item nt">资深平面设计师 </div>
+        </div>
+    </div>
+    <div class="tabCon" id="advt">
+        <div class="tabCon_item advt_cnt cnt">
+           <div class="job_name">资深平面设计师</div>
+            <p>
+                职位描述：<br/>
+                整木家装订单设计、深化和拆单。<br/>
+                岗位要求：<br/>
+                1.     设计软件熟练，热爱设计工作。<br/>
+                2.     有家具木门厂家设计和图纸深化工作经验。<br/>
+                3.     有实际现场量尺工作经验。<br/>
+                4.     能适应出差。
+            </p>
+        </div>
+        <div class="tabCon_item advt_cnt cnt">
+            <div class="job_name">资深平面设计师</div>
+            <p>
+                职位描述：<br/>
+                整木家装订单设计、深化和拆单。<br/>
+                岗位要求：<br/>
+                1.     设计软件熟练，热爱设计工作。<br/>
+                2.     有家具木门厂家设计和图纸深化工作经验。<br/>
+                3.     有实际现场量尺工作经验。<br/>
+                4.     能适应出差。
+            </p>
+        </div>
+        <div class="tabCon_item advt_cnt cnt">
+            <div class="job_name">文案策划</div>
+            <p>
+                职位描述：<br/>
+                整木家装订单设计、深化和拆单。<br/>
+                岗位要求：<br/>
+                1.     设计软件熟练，热爱设计工作。<br/>
+                2.     有家具木门厂家设计和图纸深化工作经验。<br/>
+                3.     有实际现场量尺工作经验。<br/>
+                4.     能适应出差。
+            </p>
+        </div>
+    </div>
+</section>
+<script>
+    $(".advt_item").click(function(){
+        $(this).addClass("active").siblings().removeClass("active")
+        $("#advt>.tabCon_item").eq($(this).index()).fadeIn().siblings().hide()
+    })
+</script>
+
+<script src="js/shop.js"></script>
+<section class="section shops">
+    <div class="section_link" id="c"></div>
+    <div class="sectionTil sm_mar">
+        <h3>专卖店展示</h3>
+        <div class="line"></div>
+    </div>
+    <div class="shopList" id="shopList">
+        <div class="shopWrap flex">
+            <div class="shop_item">
+                <img src="images/shop.jpg" alt=""/>
+                <div class="shop_info cnt flex flex_dir_clo flex_jcontent">
+                    <h3>上海</h3>
+                    <p>地址：上海古墩路808号新时代广场B座二层58-60
+                        电话：0571-88101979</p>
+                </div>
+            </div>
+            <div class="shop_item">
+                <img src="images/shop.jpg" alt=""/>
+                <div class="shop_info cnt">
+                    <h3>上海</h3>
+                    <p>地址：上海古墩路808号新时代广场B座二层58-60
+                        电话：0571-88101979</p>
+                </div>
+            </div>
+            <div class="shop_item">
+                <img src="images/shop.jpg" alt=""/>
+                <div class="shop_info cnt flex flex_dir_clo flex_jcontent">
+                    <h3>上海</h3>
+                    <p>地址：上海古墩路808号新时代广场B座二层58-60
+                        电话：0571-88101979</p>
+                </div>
+            </div>
+        </div>
+        <div class="shopNav"></div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="f_cnt">
+        <div class="f_logo hidden_sm"></div>
+        <div class="f_contact">
+            <div class="f_icon">
+                <div class="iconfont icon-weixin1"></div>
+                <div class="iconfont icon-weibo"></div>
+                <div class="iconfont icon-qq"></div>
+            </div>
+            <p>如晶家具（上海）有限公司<br/>
+                地址：上海市浦东新区南汇工业汇城路1586号<br/>
+                Tel/.. +021-58080666<br/>
+                Fax/.. +86 769 8860 0822<br/>
+                Email/.. info@kaviar.cn
+            </p><br/><br/>
+            <p>咨询热线：<a href="tel:400-095-888">400-095-888</a></p>
+        </div>
+        <div class="f_nav hidden_sm">
+            <h3>官网导航</h3>
+            <ul>
+                <li><a href="about.html">关于如晶</a></li>
+                <li><a href="product.html">产品介绍</a></li>
+                <li><a href="case.html">服务案例</a></li>
+                <li><a href="join.html">招商加盟</a></li>
+                <li><a href="new.html">新闻动态</a></li>
+                <li><a href="contact.html">联系如晶</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<div class="bottom">© COPYRIGHT yabu | 如晶 · 厨柜 | 衣柜 | 家具 - 粤ICP备15089747号</div>
+</body>
+</html>

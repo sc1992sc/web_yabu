@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>关于我们</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/phone.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<script>
+    $("document").ready(function(){
+        var w= $(window).width();
+        if(w<=414){
+            $(".header").addClass("noanim")
+        }
+        $("html,body").css("font-size",w/6.4+"px" );
+    });
+    $(window).resize(function(){
+        var w= $(window).width();
+        if(w<=414){
+            $(".header").addClass("noanim")
+        }
+        $("html,body").css("font-size",w/6.4+"px" );
+    });
+    document.body.addEventListener('touchstart', function () { });
+</script>
+
+<!--头部-->
+<header class="header">
+    <div class="header_t">
+        <div class="c">
+            <a href="index.html" class="logo"></a>
+            <span class="header_t_text">—  —高端定制家居一站式服务商</span>
+            <div class="header_menu iconfont icon-menu" id="menu"></div>
+        </div>
+    </div>
+    <div class="header_b flex flex_jcontent">
+        <a href="index.html" class="navLogo"></a>
+        <div class="nav">
+            <ul class="nav_ul">
+                <li class="nav_item">
+                    <div class="nav_name">
+                        <a href="index.html"><span class="iconfont icon-xla"></span>网站首页</a>
+                    </div>
+                </li>
+                <li class="nav_item">
+                    <div class="nav_name">
+                        <a href="about.html"><span class="iconfont icon-xla"></span>关于如晶</a>
+                        <div class="nav_cover"></div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="about.html#a">品牌简介</a>
+                        <a href="about.html#b">设计师团队</a>
+                        <a href="about.html#c">工厂实力</a>
+                        <a href="about.html#d">荣誉资质</a>
+                    </div>
+                </li>
+                <li class="nav_item">
+                    <div class="nav_name">
+                        <a href="product.html"><span class="iconfont icon-xla"></span>产品介绍</a>
+                        <div class="nav_cover"></div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="product.html">木作墙饰</a>
+                        <a href="product.html">衣帽间</a>
+                        <a href="product.html">背景墙</a>
+                        <a href="product.html">时尚家具</a>
+                        <a href="product.html">软装配饰</a>
+                    </div>
+                </li>
+                <li class="nav_item">
+                    <div class="nav_name">
+                        <a href="case.html"><span class="iconfont icon-xla"></span>服务案例</a>
+                        <div class="nav_cover"></div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="case.html">现代时尚</a>
+                        <a href="case.html">低调奢华</a>
+                        <a href="case.html">华丽古典</a>
+                    </div>
+                </li>
+                <li class="nav_item">
+                    <div class="nav_name">
+                        <a href="join.html"><span class="iconfont icon-xla"></span>招商加盟</a>
+                        <div class="nav_cover"></div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="join.html#a">加盟条件</a>
+                        <a href="join.html#b">加盟支持</a>
+                        <a href="join.html#c">加盟优势</a>
+                        <a href="join.html#d">加盟流程</a>
+                        <a href="join.html#e">终端形象展示</a>
+                    </div>
+                </li>
+                <li class="nav_item">
+                    <div class="nav_name">
+                        <a href="new.html"><span class="iconfont icon-xla"></span>新闻动态</a>
+                        <div class="nav_cover"></div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="new.html">公司动态</a>
+                        <a href="new.html">行业资讯</a>
+                        <a href="new.html">市场活动</a>
+                    </div>
+                </li>
+                <li class="nav_item">
+                    <div class="nav_name">
+                        <a href="contact.html"><span class="iconfont icon-xla"></span>联系如晶</a>
+                        <div class="nav_cover"></div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="contact.html#a">联系我们</a>
+                        <a href="contact.html#b">加入我们</a>
+                        <a href="contact.html#c">专卖店展示</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+</header>
+<script>
+    //pc导航动画
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            var top=$(document).scrollTop();
+            var h=.57*($(window).width()/6.4)/.44;
+            if(top>h){
+                $(".header").addClass("active")
+            }else{
+                if($(".header").hasClass("active")){
+                    $(".header").removeClass("active")
+                }
+            }
+        })
+    })
+    //手机弹出菜单
+    $("#menu").click(function(){
+        if($(this).hasClass("icon-chacha")){
+            $(this).removeClass("icon-chacha").addClass("icon-menu");
+            $(".header_b").removeClass("active")
+        }else{
+            $(this).addClass("icon-chacha").removeClass("icon-menu");
+            $(".header_b").addClass("active")
+        }
+    })
+    $(".dropdown a").click(function(){
+        $("#menu").removeClass("icon-chacha").addClass("icon-menu");
+        $(".header_b").removeClass("active")
+    })
+</script>
+
+<!--banner-->
+<div class="ibanner">
+    <img src="images/ib1.jpg" alt=""/>
+    <div class="btil">
+        <h3 class="btil_text">关于如晶</h3>
+        <p class="btil_text">about yabu</p>
+    </div>
+</div>
+
+<section class="section">
+    <div class="section_link" id="a"></div>
+    <div class="sectionTil sm_mar">
+        <h3>品牌简介</h3>
+        <div class="line"></div>
+    </div>
+    <div class="brand cnt content">
+        <p>
+            如晶精装木作是专为高端豪宅、别墅、星级酒店、游艇等提供集家具设计、研发生产、安装服务为一体的高端家具品牌。如晶
+            紧跟国际创新趋势，以高端设计理念为导向，结合科技化生产设备，以大师级的固装产品为高端人群创造出时尚雅致、舒适
+            贴心的顶级家居生活。生产基地坐落于上海市(浦东新区南汇工业区)<br/>
+            ，总投资8,000多万元，占地面积36,000平方米，先后引进德国意大利先进生产设备与技术，并与国内外著名室内设计师、建筑师、<br/>
+            艺术家紧密合作。以“雅致、奢华，现代，简约，时尚”的风格为设计理念，在平静中尽显优雅、在低调中尽显奢华。配合高档水性环保材料和创新的工艺<br/>
+            制作，每件产品都经过严格的层层把关筛选，严苛的试验。产品犹如艺术品匠心贯穿始终，从整体护墙木作、<br/>
+            定制衣柜、橱柜等各种柜类产品，皆层层把关，精心设计。
+        </p>
+    </div>
+    <div class="brandList">
+        <div class="brandItem">
+            <div class="brand_img"><img src="images/br1.jpg" alt=""/></div>
+            <div class="brand_text">
+                <div class="cnt">
+                    <h3>奢华与时尚相融合</h3>
+                    <p>当下豪宅的定义已经发生了本质的变化，国际顶级设计大师提出“最重要的原因是时代变化了，奢华已经不再是一些
+                        奢侈材质堆砌出来的，现在大家更喜欢低调有品质的装饰方式。选用合适的材料，并很好把设计理念很好地融合进
+                        去，不光光是材料的豪华”。而如晶固装的产品特色与当下流行趋势不谋而合，如晶固装的特色在于把现代和简洁
+                        风格设计出非常具有豪华感，选用合适的材料，并很好把设计理念很好地融合进去，雅致、奢华，现代，简约，时
+                        尚的风格，在平静中尽显优雅、在低调中尽显奢华。</p>
+                </div>
+            </div>
+        </div>
+        <div class="brandItem">
+            <div class="brand_text">
+                <div class="cnt">
+                    <h3>奢华与时尚相融合</h3>
+                    <p>当下豪宅的定义已经发生了本质的变化，国际顶级设计大师提出“最重要的原因是时代变化了，奢华已经不再是一些
+                        奢侈材质堆砌出来的，现在大家更喜欢低调有品质的装饰方式。选用合适的材料，并很好把设计理念很好地融合进
+                        去，不光光是材料的豪华”。而如晶固装的产品特色与当下流行趋势不谋而合，如晶固装的特色在于把现代和简洁
+                        风格设计出非常具有豪华感，选用合适的材料，并很好把设计理念很好地融合进去，雅致、奢华，现代，简约，时
+                        尚的风格，在平静中尽显优雅、在低调中尽显奢华。</p>
+                </div>
+            </div>
+            <div class="brand_img"><img src="images/br2.jpg" alt=""/></div>
+        </div>
+        <div class="brandItem">
+            <div class="brand_img"><img src="images/br1.jpg" alt=""/></div>
+            <div class="brand_text">
+                <div class="cnt">
+                    <h3>奢华与时尚相融合</h3>
+                    <p>当下豪宅的定义已经发生了本质的变化，国际顶级设计大师提出“最重要的原因是时代变化了，奢华已经不再是一些
+                        奢侈材质堆砌出来的，现在大家更喜欢低调有品质的装饰方式。选用合适的材料，并很好把设计理念很好地融合进
+                        去，不光光是材料的豪华”。而如晶固装的产品特色与当下流行趋势不谋而合，如晶固装的特色在于把现代和简洁
+                        风格设计出非常具有豪华感，选用合适的材料，并很好把设计理念很好地融合进去，雅致、奢华，现代，简约，时
+                        尚的风格，在平静中尽显优雅、在低调中尽显奢华。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section_link" id="b"></div>
+    <div class="sectionTil sm_mar">
+        <h3>设计师团队</h3>
+        <div class="line"></div>
+    </div>
+    <div class="brand cnt content">
+        <p>
+            善博者谋其势，怀艺者行天下!坚持每一个环节，每一个阶段，每一个细节都力求完美。服务至上，以"换位思考"的方式充
+            分从客户角度考虑问题，为领会客户的意图与需求，提供创造性的实效设计，从前期洽谈到设计定位,从空间设计理念到空间划
+            分利用;从色彩搭配到后期配饰，强调创新力求打造完美空间，以饱满的热情提供最优质的服务。秉承"专业之精神，诚信之态度"，深
+            信"设计创造价值，形象产生力量"。
+        </p>
+    </div>
+    <div class="team">
+        <div class="team_img"><img src="images/t1.jpg" alt=""/></div>
+        <div class="team_text cnt">
+            <p>公司旗下现汇聚了10余名设计经验丰富的专业家具设计师，他们保持与美国HBA、HPS及WILSON等顶尖的国际设计公司合作，
+                把握世界顶级设计理念，对产品进行整体设计开发；这支团队同时提供专业咨询服务，结合环境与功能要求，为客户做
+                出周全详尽的工程配套建议、实地测量并量身定制的设计方案。
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section_link" id="c"></div>
+    <div class="sectionTil sm_mar">
+        <h3>工厂实力</h3>
+        <div class="line"></div>
+    </div>
+    <div class="brand cnt content">
+        <p>
+            如晶家具有限公司，是一家港资专业生产意式现代风格家居产品, 并提供整体定制服务的企业，<br/>
+            集设计、研发、生产、销售及配套服务于一体。<br/>
+            “Simplexity & Sophisticated 简洁优雅，注重细节” 就是如晶独特的产品经营理念。
+        </p>
+    </div>
+    <div class="powerList">
+        <div class="power_item">
+            <img src="images/fac1.jpg" alt=""/>
+            <div class="power_cover">
+                <p>
+                    <span class="power_num">3600</span>平方米生产基地
+                </p>
+            </div>
+        </div>
+        <div class="power_item">
+            <img src="images/fac4.jpg" alt=""/>
+            <div class="power_cover">
+                <p>
+                    <span class="power_num">8000</span>万总投资金额
+                </p>
+            </div>
+        </div>
+        <div class="power_item">
+            <img src="images/fac3.jpg" alt=""/>
+           <div class="power_cover">
+               <p>
+                   <span class="power_num">100</span>技术及生产人员
+               </p>
+           </div>
+        </div>
+        <div class="power_item">
+            <img src="images/fac2.jpg" alt=""/>
+          <div class="power_cover">
+              <p>
+                  <span class="power_num">50</span>产品设计及研发人员
+              </p>
+          </div>
+        </div>
+    </div>
+</section>
+
+<section class="section honor">
+    <div class="section_link" id="d"></div>
+    <div class="sectionTil sm_mar">
+        <h3>荣誉资质</h3>
+        <div class="line"></div>
+    </div>
+    <div class="brand cnt content">
+        <p>
+            如晶以品质演绎尊贵，以细节演绎奢华，专为新贵阶层度身量制，<br/>
+            正如您所感触看到的，如晶的每一款产品是值得鉴赏者追捧。其实不过是，我们做的永远比您能想到的多很多。
+        </p>
+    </div>
+    <div class="honorList">
+        <div class="honor_item"><img src="images/honor.jpg" alt=""/></div>
+        <div class="honor_item"><img src="images/h1.png" alt=""/></div>
+        <div class="honor_item"><img src="images/honor.jpg" alt=""/></div>
+        <div class="honor_item"><img src="images/honor.jpg" alt=""/></div>
+        <div class="honor_item"><img src="images/honor.jpg" alt=""/></div>
+        <div class="honor_item"><img src="images/honor.jpg" alt=""/></div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="f_cnt">
+        <div class="f_logo hidden_sm"></div>
+        <div class="f_contact">
+            <div class="f_icon">
+                <div class="iconfont icon-weixin1"></div>
+                <div class="iconfont icon-weibo"></div>
+                <div class="iconfont icon-qq"></div>
+            </div>
+            <p>如晶家具（上海）有限公司<br/>
+                地址：上海市浦东新区南汇工业汇城路1586号<br/>
+                Tel/.. +021-58080666<br/>
+                Fax/.. +86 769 8860 0822<br/>
+                Email/.. info@kaviar.cn
+            </p><br/><br/>
+            <p>咨询热线：<a href="tel:400-095-888">400-095-888</a></p>
+        </div>
+        <div class="f_nav hidden_sm">
+            <h3>官网导航</h3>
+            <ul>
+                <li><a href="about.html">关于如晶</a></li>
+                <li><a href="product.html">产品介绍</a></li>
+                <li><a href="case.html">服务案例</a></li>
+                <li><a href="join.html">招商加盟</a></li>
+                <li><a href="new.html">新闻动态</a></li>
+                <li><a href="contact.html">联系如晶</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<div class="bottom">© COPYRIGHT yabu | 如晶 · 厨柜 | 衣柜 | 家具 - 粤ICP备15089747号</div>
+
+</body>
+</html>
